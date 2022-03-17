@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular</title>
+  <link rel="stylesheet" href="component-a.component.css">
+</head>
+<body>
+    <div class="comp"><h1>COMPONENT A</h1>
+    <table class="center">    
+        <thead>
+                <tr  style="background-color:rgb(171, 238, 250);">
+                    <th style="color:blue; font-size: 25px;">SID</th>
+                    <th style="color:blue;font-size: 25px">SName</th>
+                    <th style="color:blue;font-size: 25px"> Department</th>
+                    <th style="color:blue;font-size: 25px">City</th>
+                </tr>
+        </thead>  
+        <tbody>
+            
+            <tr *ngFor = "let items of data" >
+                <td style="color: darkred;">{{items.sid}}</td>
+                <td>{{items.sname}}</td>
+                <td>{{items.department}}</td>
+                <td>{{items.city}}</td>
+            </tr>
+     </tbody>
+    </table>
+    </div>
+    <app-component-b (callToParent) = "display($event)"></app-component-b>
+
+</body>
+</html>
